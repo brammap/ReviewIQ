@@ -12,7 +12,7 @@
 | **Day 3** | **Sat, May 2** | Integration + testing | Dashboard UI | Daily standup |
 | **Day 4** | **Sun, May 3** | Ready for frontend | Polish UI | Daily standup |
 | **Day 5** | **Mon, May 4** | Polish + fixes | Final testing | Daily standup |
-| **Sync Call** | **Wed, May 6 @ 5 PM** | **CONNECT BACKEND ↔ FRONTEND** | **30 mins** | ✅ **INTEGRATION** |
+| **Sync Call** | **Wed, May 6 @ 6:30 PM** | **CONNECT BACKEND ↔ FRONTEND** | **30 mins** | ✅ **INTEGRATION** |
 
 ---
 
