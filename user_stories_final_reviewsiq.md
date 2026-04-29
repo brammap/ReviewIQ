@@ -307,7 +307,7 @@ Your Claude prompt should return structured data in this format:
 
 ## Next Steps
 
-1. ✅ Approve this document with your friend
+1. ✅ Approve this document with Bhuvana
 2. 🔨 Write the Claude prompt for review analysis
 3. 🏗️ Set up Streamlit app structure
 4. 🚀 Implement review fetching (Playwright)
