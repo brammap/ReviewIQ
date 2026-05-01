@@ -1,4 +1,5 @@
 import streamlit as st
+import time
 
 st.set_page_config(
     page_title="ReviewsIQ",
@@ -65,11 +66,36 @@ st.markdown("""
             padding-top: 30px;
             border-top: 1px solid #b2e0d8;
         }
+        .loading-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .loading-text {
+            font-size: 16px;
+            color: #1a1a1a;
+            text-align: center;
+            margin: 8px 0px;
+        }
+        /* Progress bar color and thickness */
+        .stProgress > div > div > div > div {
+            background-color: #2a9d8f;
+            height: 20px;
+            border-radius: 10px;
+        }
+        .stProgress > div > div > div {
+            height: 20px;
+            border-radius: 10px;
+            background-color: #b2e0d8;
+        }
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
     </style>
 """, unsafe_allow_html=True)
 
+# PAGE 1: Input Page
 st.markdown("""
     <div class="hero">
         <div class="hero-title">⭐ ReviewsIQ</div>
@@ -88,12 +114,40 @@ with col2:
 
 st.markdown('<p class="helper">No account needed · Free to try</p>', unsafe_allow_html=True)
 
+# PAGE 2: Loading Screen
 if button:
     if url:
-        st.success("✅ Got it! Loading your analysis...")
+        st.divider()
+        st.markdown('<p class="loading-title">🔍 Analyzing your reviews...</p>', unsafe_allow_html=True)
+
+        progress_bar = st.progress(0)
+        status = st.empty()
+
+        # Step 1
+        status.markdown('<p class="loading-text">📡 Reading reviews from Google...</p>', unsafe_allow_html=True)
+        for i in range(33):
+            time.sleep(0.03)
+            progress_bar.progress(i + 1)
+
+        # Step 2
+        status.markdown('<p class="loading-text">🧠 Analyzing sentiment and themes...</p>', unsafe_allow_html=True)
+        for i in range(33, 66):
+            time.sleep(0.03)
+            progress_bar.progress(i + 1)
+
+        # Step 3
+        status.markdown('<p class="loading-text">💡 Generating recommendations...</p>', unsafe_allow_html=True)
+        for i in range(66, 100):
+            time.sleep(0.03)
+            progress_bar.progress(i + 1)
+
+        status.markdown('<p class="loading-text">✅ Analysis complete!</p>', unsafe_allow_html=True)
+        st.success("Your results are ready!")
+
     else:
         st.warning("⚠️ Please enter a Google Business URL first.")
 
+# Trust signals
 st.markdown("""
     <div class="trust">
         ⭐ 500+ Reviews Analyzed &nbsp;&nbsp;|&nbsp;&nbsp; 🏪 50+ Businesses &nbsp;&nbsp;|&nbsp;&nbsp; 🆓 Free to Try
